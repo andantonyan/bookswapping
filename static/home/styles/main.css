@@ -1,0 +1,22 @@
+.cf:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+html, body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #e7e7e7;
+}
+
+.main {
+	width: 1200px;
+}

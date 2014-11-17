@@ -1,5 +1,28 @@
-{% load socialaccount %}
-{% providers_media_js %}
-<a href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Connect</a>
-
-
+{% load staticfiles %}
+doctype html
+html
+	head
+		title {{title}}
+		meta(http-equiv="content-type", content="text/html; charset=utf-8")
+		meta(name="description", content="")
+		meta(name="keywords", content="")
+		script(src="{% static 'home/scripts/main.js' %}")
+		link(rel="stylesheet", type="text/css", href="{% static 'vendor/bower_components/normalize.css/normalize.css' %}")
+		link(rel="stylesheet", type="text/css", href="{% static 'home/styles/main.css' %}")
+		//- link(rel="shortcut icon", href="{% static 'home/icons/favicon.ico' %}")
+	body
+		{% block main %}
+		section.main.cf.center
+			{% block header %}
+			header.site-header.cf
+				h1 header
+			{% endblock header %}
+			{% block site-content %}
+			section.site-content.cf
+				h1 Site Content
+			{% endblock site-content %}
+			{% block footer %}
+			footer.site-footer.cf
+				h1 footer
+			{% endblock footer %}					
+		{% endblock main %}

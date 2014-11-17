@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'djangobower',
     # main applications
     'home'
 )
@@ -147,3 +148,14 @@ SOCIALACCOUNT_PROVIDERS = \
             'VERIFIED_EMAIL': False
         }
     }
+
+STATICFILES_FINDERS = DEFAULT_SETTINGS.STATICFILES_FINDERS + (
+    'djangobower.finders.BowerFinder',
+)
+
+BOWER_COMPONENTS_ROOT = BASE_DIR + '/static/vendor/'
+
+BOWER_INSTALLED_APPS = (
+    # 'jquery',
+    # 'underscore',
+)
